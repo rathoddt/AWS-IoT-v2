@@ -13,8 +13,8 @@ IoT solution using AWS IoT Core and related services
  In <i>Manage</i> section click <i>All devices -> Things <ii>
 
     In a window that opens click <i> Create things</i>  
-    --> Create single thing
-    Enter thing name- City-temperature
+    --> Create single thing</i>
+    Enter thing name- <i>City-temperature </i>
 
     On next screen select <i> Auto-generate a new certificate (recommended)</i> for <i> Device certificate <i>. It will create certificate files which the device uses for the authentication purpose. AWS IoT supports X.509 client certificates.
 
