@@ -24,7 +24,7 @@ IoT solution using AWS IoT Core and related services
 
 4) Go to <i> Test  -> MQTT Test Client </i> copy endpoint and paste into `Publish-Device-to-AWS-IoT-Core.py` as below:
     ```
-    #Note endpoint with yours
+    #Note replace endpoint with yours
     myMQTTClient.configureEndpoint("a17dxerfxwfxb1-ats.iot.us-east-1.amazonaws.com", 8883)
     ```
 
@@ -44,6 +44,6 @@ IoT solution using AWS IoT Core and related services
 
     If everthing is configured properly you should see the temperature value in json format in AWS Console
 
-    This program can be modified to runn in loop and send data at regular interval.
+    This program can be modified to run in loop and send data at regular interval.
 
 
