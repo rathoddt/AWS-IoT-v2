@@ -1,8 +1,10 @@
+import time
 from AWSIoTPythonSDK.MQTTLib import AWSIoTMQTTClient
-import sys
-import random
-import datetime
-import json
+def customCallback(client,userdata,message):
+    print("callback came...")
+    print(message.payload)
+
+
 
 myMQTTClient = AWSIoTMQTTClient("iot-device-dojo-01")
 
@@ -12,21 +14,13 @@ myMQTTClient.configureCredentials("J:\my-github-repo\AWS-IoT-v2\certs\AmazonRoot
 myMQTTClient.connect()
 print("Client Connected")
 
-#msg = "{'Data':'Reading 1'}"
-#msg='b'{\n  "message": "JetaRathod"\n}''
+myMQTTClient.subscribe("general/outbound", 1, customCallback)
+print('waiting for the callback. Click to conntinue...')
+x = input()
 
-now = datetime.datetime.now()
-time_stamp = now.strftime("%Y-%m-%d %H:%M:%S")
-temp = str(random.randint(25, 44))
+myMQTTClient.unsubscribe("general/outbound")
+print("Client unsubscribed") 
 
-
-msg ={}
-msg["Time"] = time_stamp
-msg["Temperature"] = temp
-msg = json.dumps(msg)
-topic = "general/inbound"
-myMQTTClient.publish(topic, msg, 0)  
-print("Message Sent")
 
 myMQTTClient.disconnect()
 print("Client Disconnected")
