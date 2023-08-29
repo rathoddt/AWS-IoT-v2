@@ -1,12 +1,12 @@
 # AWS-IoT-v2
 
-IoT solution using AWS IoT Core and related services
+IoT solution using AWS IoT Core and AWS related services
 
 1) Search for AWS IoT core after logging in AWS console
 
-2) You will first create an IoT policy which authorizes the device to perform actions within AWS IoT core. Goto the IoT Core Console, click on the <i>Policies</i> option under <i>Security</i> menu in the left and then click on the <i>Create</i> a policy button.
+2) You will first create an IoT policy which authorizes the device to perform actions within AWS IoT core. Go to the IoT Core Console, click on the <i>Policies</i> option under <i>Security</i> menu in the left and then click on the <i>Create</i> a policy button.
 
-    Enter policy name : `iot-dht-policy` and paste content of `iot-policy-generic.json` then click <i>create</i>.
+    Enter policy name : `iot-device-policy` and paste content of `iot-policy-generic.json` then click <i>create</i>.
 
 
  3) Create a device as thing and attach the policy to it.  
@@ -22,7 +22,7 @@ IoT solution using AWS IoT Core and related services
 
     Download all the certificate files - <i> A certificate for this thing, A public key, A private key</i> and <i>A root CA</i> for AWS. 
 
-4) Go to <i> Test  -> MQTT Test Client </i> copy endpoint and paste into `Publish-Device-to-AWS-IoT-Core.py` as below:
+4) Go to <i> Test  -> MQTT Test Client </i> clieck on <i> Connection Details</i> and copy <i>Endpoint </i> url and then paste into `Publish-Device-to-AWS-IoT-Core.py` as below:
     ```
     #Note replace endpoint with yours
     myMQTTClient.configureEndpoint("a17dxerfxwfxb1-ats.iot.us-east-1.amazonaws.com", 8883)
